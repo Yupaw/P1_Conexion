@@ -25,7 +25,15 @@ namespace P1_Conexion
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-
+        private void LimpiarCuadrosDeTexto()
+        {
+            txtAgCode.Clear();
+            txtAgNombre.Clear();
+            txtAgPrecio.Clear();
+            txtAgDesc.Clear();
+            txtAgExist.Clear();
+            txtAgCate.Clear();
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -152,12 +160,9 @@ namespace P1_Conexion
 
         private void btnLimpiarAct_Click(object sender, EventArgs e)
         {
-            txtAgCode.Clear();
-            txtAgNombre.Clear();
-            txtAgPrecio.Clear();
-            txtAgDesc.Clear();
-            txtAgExist.Clear();
-            txtAgCate.Clear();
+            LimpiarCuadrosDeTexto();
+
+            MessageBox.Show("Se han limpiado todos los cuadros de texto.");
         }
 
         private void label7_Click(object sender, EventArgs e)
